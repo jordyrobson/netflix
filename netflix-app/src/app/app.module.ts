@@ -15,6 +15,10 @@ import { HeaderComponent } from './component/header/header.component';
 import { HomeComponent } from './component/home/home.component';
 import { MovieDetailsComponent } from './component/movie-details/movie-details.component';
 import { HomeSliderComponent } from './component/home-slider/home-slider.component';
+import { TrendingComponent } from './component/trending/trending.component';
+import { TopRatedComponent } from './component/top-rated/top-rated.component';
+import { NowPlayingComponent } from './component/now-playing/now-playing.component';
+import { OriginalsComponent } from './component/originals/originals.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { HomeSliderComponent } from './component/home-slider/home-slider.compone
     HeaderComponent,
     HomeComponent,
     MovieDetailsComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    TrendingComponent,
+    TopRatedComponent,
+    NowPlayingComponent,
+    OriginalsComponent
   ],
   imports: [
     BrowserModule,

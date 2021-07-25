@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   nowPlaying: Movie;
   latest: Movie;
 
+  headerBGUrl: string;
+
   constructor(private movie: MovieService) { }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subs.push(this.movie.getTrending().subscribe(data => {
       this.trending = data;
       console.log(data);
+      this.headerBGUrl = 'http://image.tmdb.org/t/p/original'+ this.trending!.results![0].backdrop_path;
     }))
     this.subs.push(this.movie.getPopularMovies().subscribe(data => this.popular = data));
     this.subs.push(this.movie.getLatestMovie().subscribe(data => this.latest = data));
