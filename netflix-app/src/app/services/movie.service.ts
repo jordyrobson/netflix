@@ -11,7 +11,8 @@ const enum endpoint {
     top_rated = '/movie/top_rated',
     upcoming = '/movie/upcoming',
     trending = '/trending/all/week',
-    originals = '/discover/tv'
+    originals = '/discover/tv',
+    action = '/discover/movie?with_genres=28'
 }
 
 @Injectable ({
@@ -23,6 +24,14 @@ export class MovieService{
     private api_key = environment.api;
 
     constructor(private http: HttpClient){}
+
+    getActionMovies():Observable<Movie> {
+        return this.http.get<Movie>(`${this.URL}${endpoint.action}`,{
+            params:{
+                api_key: this.api_key
+            }
+        });
+    }
 
     getLatestMovie():Observable<Movie> {
         return this.http.get<Movie>(`${this.URL}${endpoint.latest}`,{
