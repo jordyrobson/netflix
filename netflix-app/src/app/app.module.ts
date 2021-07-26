@@ -19,6 +19,7 @@ import { TrendingComponent } from './component/trending/trending.component';
 import { TopRatedComponent } from './component/top-rated/top-rated.component';
 import { NowPlayingComponent } from './component/now-playing/now-playing.component';
 import { OriginalsComponent } from './component/originals/originals.component';
+import { SingleSliderComponent } from './component/single-slider/single-slider.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OriginalsComponent } from './component/originals/originals.component';
     TrendingComponent,
     TopRatedComponent,
     NowPlayingComponent,
-    OriginalsComponent
+    OriginalsComponent,
+    SingleSliderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,16 @@
-<h2>{{title}}</h2>
-
 <div class="movie">
     <div class="movie__images">
-        <div class="thumbnails" >
+        <div class="thumbnails">
             <swiper
-                [slidesPerView]="5"
+                [slidesPerView]="6"
                 [spaceBetween]="0"
                 (swiper)="onSwiper($event)"
                 (slideChange)="onSlideChange()"
                 class="carousel"
             >
-                <ng-template *ngFor="let m of movies.results; let i=index" swiperSlide >
+                <ng-template *ngFor="let m of movies.results; let i=index" swiperSlide>
                     <img src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="m.title" class="swiper-item"
-                    [routerLink]="['movie-details',m.id]"
+                    [routerLink]="['/movie-details',m.id]"
                     >
                 </ng-template>
                 

@@ -12,7 +12,8 @@ const enum endpoint {
     upcoming = '/movie/upcoming',
     trending = '/trending/all/week',
     originals = '/discover/tv',
-    action = '/discover/movie?with_genres=28'
+    action = '/discover/movie?with_genres=28',
+    movieById = '/movie/'
 }
 
 @Injectable ({
@@ -79,5 +80,13 @@ export class MovieService{
                 api_key: this.api_key
             }
         });
+    }
+
+    getById(id:string):Observable<Movie> {
+        return this.http.get<Movie>('https://api.themoviedb.org/3/movie/'+id, {
+            params:{
+                api_key: this.api_key
+            }
+        })
     }
 }
